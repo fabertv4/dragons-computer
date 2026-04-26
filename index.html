@@ -3,281 +3,784 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-
-<title>Dragon’s Computer</title>
+<title>Dragon’s Computer | PC Gaming, Custom Build e Riparazioni Premium</title>
+<meta name="description" content="Dragon’s Computer progetta PC gaming su misura, build custom loop e riparazioni rapide. Preventivo su WhatsApp.">
 
 <style>
+:root{
+  --bg:#030407;
+  --panel:#0b0f17;
+  --panel2:#111827;
+  --text:#f5f7fb;
+  --muted:#9aa4b2;
+  --soft:#c9d2e3;
+  --red:#ff2d2d;
+  --violet:#8b5cf6;
+  --blue:#38bdf8;
+  --green:#22c55e;
+  --border:rgba(255,255,255,.10);
+  --glass:rgba(255,255,255,.055);
+  --shadow:0 30px 100px rgba(0,0,0,.55);
+}
 
-/* RESET */
-*{margin:0;padding:0;box-sizing:border-box;}
-
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
 body{
-font-family:-apple-system,BlinkMacSystemFont,sans-serif;
-background:#05060a;
-color:#fff;
-overflow-x:hidden;
+  font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Inter,Arial,sans-serif;
+  background:var(--bg);
+  color:var(--text);
+  line-height:1.5;
+  overflow-x:hidden;
 }
+a{text-decoration:none;color:inherit}
+button,input,select,textarea{font:inherit}
+::selection{background:var(--red);color:#fff}
 
-/* GLOW BACKGROUND */
+.noise{
+  position:fixed;inset:0;z-index:-3;pointer-events:none;opacity:.13;
+  background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='256' height='256' filter='url(%23n)' opacity='.55'/%3E%3C/svg%3E");
+}
 .bg{
-position:fixed;
-width:100%;
-height:100%;
-z-index:-1;
-background:
-radial-gradient(circle at 20% 30%, rgba(255,0,0,0.2), transparent 40%),
-radial-gradient(circle at 80% 70%, rgba(140,0,255,0.2), transparent 40%);
+  position:fixed;inset:0;z-index:-4;
+  background:
+    radial-gradient(circle at 20% 10%,rgba(255,45,45,.26),transparent 32%),
+    radial-gradient(circle at 78% 24%,rgba(139,92,246,.22),transparent 34%),
+    radial-gradient(circle at 50% 85%,rgba(56,189,248,.13),transparent 40%),
+    linear-gradient(180deg,#030407 0%,#060811 50%,#030407 100%);
+}
+.bg:after{
+  content:"";position:absolute;inset:0;
+  background:linear-gradient(rgba(255,255,255,.035) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.03) 1px,transparent 1px);
+  background-size:80px 80px;
+  mask-image:radial-gradient(circle at center,black,transparent 72%);
 }
 
-/* NAV */
+.container{width:min(1180px,92%);margin:auto}
+.section{padding:120px 0}
+.kicker{
+  color:#fff;font-size:12px;font-weight:800;letter-spacing:.18em;text-transform:uppercase;
+  display:inline-flex;gap:10px;align-items:center;margin-bottom:18px;
+}
+.kicker:before{
+  content:"";width:8px;height:8px;border-radius:99px;background:linear-gradient(90deg,var(--red),var(--violet));
+  box-shadow:0 0 24px rgba(255,45,45,.8);
+}
+h1,h2,h3{letter-spacing:-.055em;line-height:.95}
+p{color:var(--muted)}
+.grad{
+  background:linear-gradient(90deg,#fff 0%,#c7d2fe 36%,#ff6b6b 70%,#8b5cf6 100%);
+  -webkit-background-clip:text;background-clip:text;color:transparent;
+}
+
+.header{
+  position:fixed;top:0;left:0;right:0;z-index:100;
+  background:rgba(3,4,7,.62);
+  backdrop-filter:blur(24px);
+  border-bottom:1px solid var(--border);
+}
 .nav{
-display:flex;
-justify-content:space-between;
-padding:20px 40px;
-position:fixed;
-width:100%;
-backdrop-filter:blur(20px);
-background:rgba(0,0,0,0.4);
-z-index:10;
+  height:74px;display:flex;align-items:center;justify-content:space-between;
+}
+.brand{display:flex;align-items:center;gap:12px;font-weight:900;letter-spacing:-.03em}
+.mark{
+  width:36px;height:36px;border-radius:12px;
+  display:grid;place-items:center;
+  background:linear-gradient(135deg,var(--red),var(--violet));
+  box-shadow:0 0 40px rgba(255,45,45,.35);
+}
+.links{display:flex;gap:26px;align-items:center;color:var(--soft);font-size:14px}
+.links a{opacity:.78;transition:.2s}
+.links a:hover{opacity:1;color:#fff}
+.navcta{
+  padding:10px 16px;border:1px solid var(--border);border-radius:999px;
+  background:rgba(255,255,255,.05);
 }
 
-.logo{font-weight:900;letter-spacing:2px;}
-
-.nav a{
-color:#aaa;
-text-decoration:none;
-margin-left:20px;
-}
-
-/* HERO */
 .hero{
-height:100vh;
-display:flex;
-flex-direction:column;
-justify-content:center;
-align-items:center;
-text-align:center;
-padding:20px;
+  min-height:100vh;
+  display:flex;align-items:center;
+  padding:130px 0 70px;
+  position:relative;
 }
-
-.hero h1{
-font-size:clamp(40px,7vw,90px);
-line-height:1;
+.hero-grid{
+  display:grid;grid-template-columns:1.02fr .98fr;gap:60px;align-items:center;
 }
-
-.hero span{
-background:linear-gradient(90deg,red,purple);
--webkit-background-clip:text;
-color:transparent;
+.hero h1{font-size:clamp(52px,7vw,104px);max-width:820px}
+.hero .sub{
+  font-size:clamp(18px,2vw,23px);max-width:650px;margin-top:26px;color:#b8c1d1;
 }
-
-.hero p{
-margin-top:20px;
-color:#aaa;
-max-width:600px;
-}
-
+.hero-actions{display:flex;flex-wrap:wrap;gap:14px;margin-top:34px}
 .btn{
-margin-top:30px;
-padding:16px 30px;
-border-radius:40px;
-font-weight:bold;
-text-decoration:none;
-display:inline-block;
+  min-height:54px;padding:16px 24px;border-radius:999px;
+  display:inline-flex;align-items:center;justify-content:center;gap:10px;
+  border:1px solid var(--border);font-weight:800;cursor:pointer;
+  transition:.25s transform,.25s opacity,.25s border-color;
 }
-
+.btn:hover{transform:translateY(-2px);border-color:rgba(255,255,255,.25)}
 .primary{
-background:linear-gradient(90deg,red,purple);
-color:white;
+  background:linear-gradient(90deg,var(--red),var(--violet));
+  color:#fff;border:0;box-shadow:0 18px 60px rgba(255,45,45,.24);
+}
+.secondary{background:rgba(255,255,255,.045);color:#fff}
+.hero-proof{
+  display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:38px;max-width:680px;
+}
+.proof{
+  padding:16px;border:1px solid var(--border);border-radius:18px;background:rgba(255,255,255,.035);
+}
+.proof strong{display:block;color:#fff;font-size:18px}
+.proof span{font-size:13px;color:var(--muted)}
+
+.machine-wrap{
+  position:relative;height:610px;display:grid;place-items:center;
+}
+.machine-glow{
+  position:absolute;width:520px;height:520px;border-radius:50%;
+  background:radial-gradient(circle,rgba(255,45,45,.34),rgba(139,92,246,.16),transparent 68%);
+  filter:blur(22px);animation:pulse 5s ease-in-out infinite;
+}
+.machine{
+  position:relative;width:min(430px,90vw);height:560px;border-radius:42px;
+  background:
+    linear-gradient(145deg,rgba(255,255,255,.16),rgba(255,255,255,.02)),
+    linear-gradient(180deg,#131824,#05070d);
+  border:1px solid rgba(255,255,255,.16);
+  box-shadow:var(--shadow),inset 0 0 0 1px rgba(255,255,255,.05);
+  overflow:hidden;
+  transform:perspective(1100px) rotateY(-10deg) rotateX(4deg);
+}
+.machine:before{
+  content:"";position:absolute;inset:18px;border-radius:30px;
+  border:1px solid rgba(255,255,255,.10);
+  background:linear-gradient(180deg,rgba(255,255,255,.045),rgba(0,0,0,.1));
+}
+.rgb-line{
+  position:absolute;top:0;bottom:0;width:6px;left:38px;
+  background:linear-gradient(180deg,var(--red),var(--violet),var(--blue));
+  box-shadow:0 0 34px rgba(255,45,45,.8);
+}
+.fan{
+  position:absolute;width:126px;height:126px;border-radius:50%;
+  right:58px;border:1px solid rgba(255,255,255,.16);
+  background:
+    radial-gradient(circle at center,#fff 0 4px,transparent 5px),
+    conic-gradient(from 0deg,rgba(255,45,45,.9),rgba(139,92,246,.8),rgba(56,189,248,.7),rgba(255,45,45,.9));
+  box-shadow:0 0 46px rgba(139,92,246,.25);
+  animation:spin 9s linear infinite;
+}
+.fan:after{
+  content:"";position:absolute;inset:18px;border-radius:50%;
+  background:#0a0d14;border:1px solid rgba(255,255,255,.1);
+}
+.f1{top:76px}.f2{top:224px}.f3{top:372px}
+.gpu{
+  position:absolute;left:82px;bottom:86px;width:226px;height:54px;border-radius:14px;
+  background:linear-gradient(90deg,#1d2433,#080a10);
+  border:1px solid rgba(255,255,255,.13);
+}
+.gpu:after{
+  content:"RTX / WORKSTATION READY";position:absolute;left:16px;top:17px;font-size:10px;letter-spacing:.13em;color:#9aa4b2;
+}
+.tube{
+  position:absolute;border:4px solid transparent;border-image:linear-gradient(180deg,var(--red),var(--violet)) 1;
+  opacity:.7;filter:drop-shadow(0 0 16px rgba(255,45,45,.55));
+}
+.t1{width:150px;height:180px;left:82px;top:82px;border-right:0;border-bottom:0;border-radius:30px 0 0 0}
+.t2{width:170px;height:190px;left:78px;top:210px;border-right:0;border-top:0;border-radius:0 0 0 30px}
+
+@keyframes spin{to{transform:rotate(360deg)}}
+@keyframes pulse{50%{transform:scale(1.06);opacity:.7}}
+
+.strip{
+  border-top:1px solid var(--border);border-bottom:1px solid var(--border);
+  background:rgba(255,255,255,.035);
+  overflow:hidden;
+}
+.marquee{
+  display:flex;gap:50px;white-space:nowrap;padding:18px 0;
+  animation:marquee 24s linear infinite;color:#b8c1d1;font-size:13px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;
+}
+@keyframes marquee{to{transform:translateX(-50%)}}
+
+.section-head{max-width:760px;margin-bottom:42px}
+.section-head h2{font-size:clamp(42px,5vw,76px)}
+.section-head p{font-size:18px;margin-top:18px;color:#b8c1d1}
+
+.service-grid{
+  display:grid;grid-template-columns:repeat(3,1fr);gap:18px;
+}
+.service{
+  min-height:340px;padding:32px;border:1px solid var(--border);border-radius:34px;
+  background:linear-gradient(180deg,rgba(255,255,255,.075),rgba(255,255,255,.028));
+  box-shadow:0 30px 90px rgba(0,0,0,.25);
+  position:relative;overflow:hidden;
+}
+.service:before{
+  content:"";position:absolute;inset:auto -80px -120px auto;width:220px;height:220px;border-radius:50%;
+  background:radial-gradient(circle,rgba(255,45,45,.25),transparent 68%);
+  filter:blur(10px);
+}
+.service:nth-child(2):before{background:radial-gradient(circle,rgba(56,189,248,.22),transparent 68%)}
+.service:nth-child(3):before{background:radial-gradient(circle,rgba(139,92,246,.26),transparent 68%)}
+.number{font-size:13px;color:#677084;font-weight:900;letter-spacing:.18em}
+.service h3{font-size:34px;margin-top:42px}
+.service p{margin-top:16px;min-height:94px}
+.link{
+  display:inline-flex;margin-top:24px;color:#fff;font-weight:900;
+  border-bottom:1px solid rgba(255,255,255,.28);padding-bottom:4px;
 }
 
-.secondary{
-border:1px solid #333;
-color:white;
+.split{
+  display:grid;grid-template-columns:1fr 1fr;gap:26px;align-items:stretch;
 }
-
-/* SECTION */
-.section{
-padding:120px 20px;
-max-width:1200px;
-margin:auto;
+.panel{
+  border:1px solid var(--border);border-radius:38px;
+  background:linear-gradient(180deg,rgba(255,255,255,.07),rgba(255,255,255,.025));
+  padding:42px;
+  box-shadow:var(--shadow);
 }
-
-/* GRID */
-.grid{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
-gap:30px;
-margin-top:40px;
+.panel h2{font-size:clamp(40px,5vw,68px)}
+.panel p{margin-top:18px;font-size:17px;color:#b8c1d1}
+.spec-list{display:grid;gap:12px;margin-top:28px}
+.spec{
+  display:flex;justify-content:space-between;gap:18px;
+  border-bottom:1px solid var(--border);padding:15px 0;
 }
+.spec span{color:var(--muted)}
+.spec strong{color:#fff;text-align:right}
 
-/* CARD */
-.card{
-background:rgba(255,255,255,0.05);
-border:1px solid rgba(255,255,255,0.08);
-padding:30px;
-border-radius:20px;
-backdrop-filter:blur(10px);
-transition:0.3s;
+.tiers{
+  display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:36px;
 }
-
-.card:hover{
-transform:translateY(-10px);
+.tier{
+  padding:28px;border-radius:30px;border:1px solid var(--border);
+  background:rgba(255,255,255,.045);min-height:300px;
 }
-
-/* METRICS */
-.metrics{
-display:flex;
-justify-content:center;
-gap:60px;
-margin-top:40px;
+.tier.featured{
+  background:linear-gradient(180deg,rgba(255,45,45,.17),rgba(139,92,246,.07));
+  border-color:rgba(255,255,255,.20);
 }
+.tier h3{font-size:28px}
+.price{margin:18px 0;color:#fff;font-size:22px;font-weight:900}
+.tier ul{list-style:none;display:grid;gap:10px;margin-top:20px;color:#b8c1d1;font-size:14px}
+.tier li:before{content:"✓";color:var(--green);margin-right:8px;font-weight:900}
 
-.metrics div{
-text-align:center;
+.process{
+  display:grid;grid-template-columns:repeat(5,1fr);gap:14px;margin-top:40px;
 }
-
-.metrics span{
-font-size:40px;
-font-weight:bold;
+.step{
+  padding:24px;border:1px solid var(--border);border-radius:26px;background:rgba(255,255,255,.035);
 }
+.step b{display:block;font-size:13px;color:#677084;letter-spacing:.16em;margin-bottom:22px}
+.step h3{font-size:23px;letter-spacing:-.04em}
+.step p{font-size:14px;margin-top:12px}
 
-/* FORM */
-form{
-margin-top:30px;
-display:grid;
-gap:10px;
+.repair{
+  border-radius:46px;padding:54px;
+  background:
+    radial-gradient(circle at 85% 20%,rgba(255,45,45,.22),transparent 28%),
+    linear-gradient(135deg,rgba(255,255,255,.08),rgba(255,255,255,.025));
+  border:1px solid var(--border);
+  display:grid;grid-template-columns:1.1fr .9fr;gap:40px;align-items:center;
 }
-
-input,select{
-padding:14px;
-border-radius:10px;
-border:1px solid #333;
-background:#000;
-color:white;
+.badges{display:flex;flex-wrap:wrap;gap:10px;margin-top:24px}
+.badge{
+  padding:10px 14px;border-radius:999px;border:1px solid var(--border);
+  background:rgba(0,0,0,.25);color:#cbd5e1;font-size:13px;font-weight:800;
 }
-
-/* MOBILE */
-@media(max-width:700px){
-.metrics{flex-direction:column;gap:20px;}
+.emergency-box{
+  border:1px solid rgba(255,255,255,.13);border-radius:34px;padding:30px;
+  background:rgba(0,0,0,.28);
 }
+.emergency-box h3{font-size:34px}
+.emergency-box p{margin:12px 0 24px}
 
+.gallery{
+  display:grid;grid-template-columns:1.25fr .75fr;gap:18px;margin-top:38px;
+}
+.shot{
+  min-height:360px;border-radius:36px;border:1px solid var(--border);
+  background:
+    linear-gradient(135deg,rgba(255,255,255,.08),rgba(255,255,255,.02)),
+    radial-gradient(circle at 30% 20%,rgba(255,45,45,.22),transparent 32%),
+    radial-gradient(circle at 80% 80%,rgba(139,92,246,.22),transparent 36%);
+  position:relative;overflow:hidden;
+}
+.shot:after{
+  content:"INSERIRE FOTO REALE BUILD";position:absolute;left:28px;bottom:24px;
+  color:rgba(255,255,255,.62);font-size:12px;font-weight:900;letter-spacing:.18em;
+}
+.shot.small{min-height:171px}
+.stack{display:grid;gap:18px}
+
+.lead{
+  display:grid;grid-template-columns:.92fr 1.08fr;gap:26px;align-items:start;
+}
+.form-card{
+  padding:36px;border:1px solid var(--border);border-radius:36px;
+  background:linear-gradient(180deg,rgba(255,255,255,.08),rgba(255,255,255,.025));
+}
+.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:20px}
+.form-grid .full{grid-column:1/-1}
+input,select,textarea{
+  width:100%;padding:16px 15px;border-radius:16px;border:1px solid var(--border);
+  background:rgba(0,0,0,.35);color:#fff;outline:none;
+}
+textarea{min-height:110px;resize:vertical}
+input:focus,select:focus,textarea:focus{border-color:rgba(255,255,255,.28)}
+.form-note{font-size:13px;color:#7f8a9d;margin-top:14px}
+.footer{
+  padding:48px 0 96px;border-top:1px solid var(--border);color:#677084;
+}
+.mobile-bar{
+  display:none;position:fixed;bottom:0;left:0;right:0;z-index:99;
+  background:rgba(3,4,7,.86);backdrop-filter:blur(18px);border-top:1px solid var(--border);
+}
+.mobile-bar a{flex:1;padding:16px;text-align:center;font-weight:900}
+.mobile-bar a:first-child{background:linear-gradient(90deg,var(--red),var(--violet))}
+
+.reveal{opacity:0;transform:translateY(28px);transition:900ms ease}
+.reveal.visible{opacity:1;transform:none}
+
+@media(max-width:980px){
+  .links{display:none}
+  .hero-grid,.split,.repair,.gallery,.lead{grid-template-columns:1fr}
+  .hero{padding-top:110px}
+  .machine-wrap{height:520px}
+  .machine{height:500px}
+  .service-grid,.tiers{grid-template-columns:1fr 1fr}
+  .process{grid-template-columns:1fr 1fr}
+}
+@media(max-width:640px){
+  .section{padding:84px 0}
+  .nav{height:66px}
+  .hero h1{font-size:48px}
+  .hero-actions .btn{width:100%}
+  .hero-proof{grid-template-columns:1fr}
+  .service-grid,.tiers,.process,.form-grid{grid-template-columns:1fr}
+  .panel,.repair,.form-card{padding:26px;border-radius:28px}
+  .machine-wrap{height:420px}
+  .machine{width:300px;height:400px;border-radius:32px}
+  .fan{width:88px;height:88px;right:44px}
+  .f1{top:60px}.f2{top:176px}.f3{top:292px}
+  .gpu{left:62px;width:170px;bottom:62px}
+  .mobile-bar{display:flex}
+  .footer{padding-bottom:110px}
+}
 </style>
-
-<script>
-function wa(service){
-window.location.href="https://wa.me/393000000000?text="+encodeURIComponent("Ciao, voglio info su: "+service);
-}
-</script>
-
 </head>
 
 <body>
-
 <div class="bg"></div>
+<div class="noise"></div>
 
-<div class="nav">
-<div class="logo">DRAGON’S</div>
-<div>
-<a href="#build">Build</a>
-<a href="#repair">Riparazioni</a>
-<a href="#custom">Custom</a>
-</div>
-</div>
+<header class="header">
+  <div class="container nav">
+    <a class="brand" href="#">
+      <span class="mark">D</span>
+      <span>Dragon’s Computer</span>
+    </a>
+    <nav class="links">
+      <a href="#build">Build</a>
+      <a href="#repair">Riparazioni</a>
+      <a href="#custom">Custom Loop</a>
+      <a href="#method">Metodo</a>
+      <a class="navcta" href="#preventivo">Preventivo</a>
+    </nav>
+  </div>
+</header>
+
+<main>
 
 <section class="hero">
-<h1>
-Il tuo PC<br>
-<span>deve dominare.</span>
-</h1>
+  <div class="container hero-grid">
+    <div>
+      <div class="kicker">Performance machines</div>
+      <h1>Il PC non si compra. <span class="grad">Si progetta.</span></h1>
+      <p class="sub">
+        Dragon’s Computer costruisce PC gaming, workstation e custom loop per chi pretende potenza reale,
+        temperature sotto controllo e una macchina progettata con criterio, non assemblata a caso.
+      </p>
+      <div class="hero-actions">
+        <a class="btn primary js-whatsapp" data-service="Configurazione PC Gaming" href="#">Configura il tuo PC</a>
+        <a class="btn secondary js-whatsapp" data-service="Riparazione urgente" href="#">Riparazione urgente</a>
+      </div>
+      <div class="hero-proof">
+        <div class="proof"><strong>&lt;5 min</strong><span>risposta WhatsApp</span></div>
+        <div class="proof"><strong>Su misura</strong><span>budget, giochi, uso reale</span></div>
+        <div class="proof"><strong>Premium</strong><span>build, test, assistenza</span></div>
+      </div>
+    </div>
 
-<p>
-PC gaming su misura, riparazioni rapide e custom loop premium.
-Prestazioni reali, zero compromessi.
-</p>
-
-<a href="#" class="btn primary" onclick="wa('PC Gaming')">
-Configura il tuo PC
-</a>
-
-<a href="#" class="btn secondary" onclick="wa('Riparazione urgente')">
-Riparazione urgente
-</a>
+    <div class="machine-wrap" aria-hidden="true">
+      <div class="machine-glow"></div>
+      <div class="machine">
+        <div class="rgb-line"></div>
+        <div class="tube t1"></div>
+        <div class="tube t2"></div>
+        <div class="fan f1"></div>
+        <div class="fan f2"></div>
+        <div class="fan f3"></div>
+        <div class="gpu"></div>
+      </div>
+    </div>
+  </div>
 </section>
 
+<div class="strip">
+  <div class="marquee">
+    <span>PC Gaming su misura</span><span>Custom loop</span><span>Riparazioni rapide</span><span>Upgrade hardware</span><span>Stress test</span><span>Airflow design</span>
+    <span>PC Gaming su misura</span><span>Custom loop</span><span>Riparazioni rapide</span><span>Upgrade hardware</span><span>Stress test</span><span>Airflow design</span>
+  </div>
+</div>
+
 <section class="section">
-<h2>Servizi</h2>
+  <div class="container">
+    <div class="section-head reveal">
+      <div class="kicker">Servizi principali</div>
+      <h2>Tre strade. Una sola logica: risultato.</h2>
+      <p>
+        Il sito non deve vendere “pezzi”. Deve far capire che dietro ogni macchina c’è una scelta tecnica,
+        un metodo e una responsabilità.
+      </p>
+    </div>
 
-<div class="grid">
-
-<div class="card">
-<h3>PC Gaming</h3>
-<p>Configurazioni ottimizzate per FPS reali.</p>
-<a onclick="wa('PC Gaming')">Vai →</a>
-</div>
-
-<div class="card">
-<h3>Riparazioni</h3>
-<p>Diagnosi veloce e soluzione immediata.</p>
-<a onclick="wa('Riparazione')">Vai →</a>
-</div>
-
-<div class="card">
-<h3>Custom Loop</h3>
-<p>Build premium con raffreddamento a liquido.</p>
-<a onclick="wa('Custom Loop')">Vai →</a>
-</div>
-
-</div>
+    <div class="service-grid">
+      <article class="service reveal">
+        <div class="number">01 / BUILD</div>
+        <h3>PC Gaming su misura</h3>
+        <p>Configurazioni per FPS reali, streaming, simulazione, editing e lavoro pesante. Budget ottimizzato, niente componenti messi a caso.</p>
+        <a class="link js-whatsapp" data-service="PC Gaming su misura" href="#">Richiedi build →</a>
+      </article>
+      <article class="service reveal">
+        <div class="number">02 / REPAIR</div>
+        <h3>Riparazione e diagnosi</h3>
+        <p>PC lento, crash, temperature alte, schermate blu, virus, upgrade, problemi software e hardware. Primo contatto rapido su WhatsApp.</p>
+        <a class="link js-whatsapp" data-service="Riparazione PC" href="#">Risolvi problema →</a>
+      </article>
+      <article class="service reveal">
+        <div class="number">03 / CUSTOM</div>
+        <h3>Custom Loop</h3>
+        <p>Build sceniche e silenziose con raffreddamento a liquido custom. Qui il valore è progettazione, ordine, termica e finitura.</p>
+        <a class="link js-whatsapp" data-service="Custom Loop" href="#">Voglio premium →</a>
+      </article>
+    </div>
+  </div>
 </section>
 
 <section class="section" id="build">
-<h2>Build progettate bene</h2>
-<p>Ogni euro speso deve avere senso.</p>
+  <div class="container split">
+    <div class="panel reveal">
+      <div class="kicker">Build engine</div>
+      <h2>Non serve spendere di più. Serve non sprecare.</h2>
+      <p>
+        Un PC da 2.000€ può andare male se CPU, GPU, RAM, airflow e alimentatore non sono coerenti.
+        La configurazione viene costruita partendo da monitor, giochi, software e budget reale.
+      </p>
+      <div class="spec-list">
+        <div class="spec"><span>Gaming competitivo</span><strong>FPS / latenza</strong></div>
+        <div class="spec"><span>Creator / editing</span><strong>CPU / RAM / storage</strong></div>
+        <div class="spec"><span>Silenziosità</span><strong>airflow / ventole</strong></div>
+        <div class="spec"><span>Longevità</span><strong>upgrade path</strong></div>
+      </div>
+    </div>
 
-<div class="metrics">
-<div><span>FPS</span><p>Ottimizzati</p></div>
-<div><span>-30°</span><p>Temperature</p></div>
-<div><span>0</span><p>Bottleneck</p></div>
-</div>
-</section>
-
-<section class="section" id="repair">
-<h2>Riparazione immediata</h2>
-<p>PC fermo? Scrivici ora.</p>
-
-<a class="btn primary" onclick="wa('Riparazione urgente')">
-Emergenza PC
-</a>
-</section>
-
-<section class="section" id="custom">
-<h2>Custom Loop</h2>
-<p>Silenzio. Estetica. Performance.</p>
-
-<a class="btn primary" onclick="wa('Custom Loop')">
-Richiedi build
-</a>
+    <div class="panel reveal">
+      <div class="kicker">Controllo tecnico</div>
+      <h2>Ogni build deve superare test reali.</h2>
+      <p>
+        Prima della consegna: controllo temperature, stabilità, cable management, driver, BIOS dove necessario
+        e verifica della macchina sotto carico.
+      </p>
+      <div class="spec-list">
+        <div class="spec"><span>Stress test</span><strong>stabilità</strong></div>
+        <div class="spec"><span>Temperature</span><strong>CPU/GPU</strong></div>
+        <div class="spec"><span>Cable management</span><strong>pulizia</strong></div>
+        <div class="spec"><span>Setup iniziale</span><strong>pronto all’uso</strong></div>
+      </div>
+    </div>
+  </div>
 </section>
 
 <section class="section">
-<h2>Preventivo</h2>
+  <div class="container">
+    <div class="section-head reveal">
+      <div class="kicker">Linee build</div>
+      <h2>Scegli il livello. Poi lo rendiamo tuo.</h2>
+      <p>Prezzi indicativi: il preventivo reale dipende da disponibilità componenti, obiettivo e budget.</p>
+    </div>
 
-<form>
-<input placeholder="Nome">
-<input placeholder="Telefono">
-<select>
-<option>Servizio</option>
-<option>PC Gaming</option>
-<option>Riparazione</option>
-<option>Custom Loop</option>
-</select>
-<button class="btn primary" onclick="wa('Preventivo')">
-Invia su WhatsApp
-</button>
-</form>
-
+    <div class="tiers">
+      <div class="tier reveal">
+        <h3>Essential</h3>
+        <div class="price">Budget smart</div>
+        <ul>
+          <li>Gaming Full HD</li>
+          <li>Componenti equilibrati</li>
+          <li>Ottima base upgrade</li>
+          <li>Assemblaggio pulito</li>
+        </ul>
+      </div>
+      <div class="tier featured reveal">
+        <h3>Performance</h3>
+        <div class="price">Best value</div>
+        <ul>
+          <li>1440p / FPS alto</li>
+          <li>Airflow curato</li>
+          <li>Test termici</li>
+          <li>Setup driver</li>
+        </ul>
+      </div>
+      <div class="tier reveal">
+        <h3>Extreme</h3>
+        <div class="price">No compromise</div>
+        <ul>
+          <li>4K / creator / streaming</li>
+          <li>Hardware premium</li>
+          <li>Silenziosità</li>
+          <li>Estetica curata</li>
+        </ul>
+      </div>
+      <div class="tier reveal">
+        <h3>Custom Loop</h3>
+        <div class="price">Bespoke</div>
+        <ul>
+          <li>Liquido custom</li>
+          <li>Design interno</li>
+          <li>Controllo termico</li>
+          <li>Build scenica</li>
+        </ul>
+      </div>
+    </div>
+  </div>
 </section>
+
+<section class="section" id="repair">
+  <div class="container repair reveal">
+    <div>
+      <div class="kicker">Emergency repair</div>
+      <h2>PC fermo? Non aspettare giorni.</h2>
+      <p>
+        Il funnel riparazioni deve convertire subito: sintomo, urgenza, foto/video, diagnosi iniziale.
+        Se il problema è software si può tentare assistenza remota; se è hardware si passa al negozio.
+      </p>
+      <div class="badges">
+        <span class="badge">PC non si accende</span>
+        <span class="badge">schermata blu</span>
+        <span class="badge">temperature alte</span>
+        <span class="badge">virus / malware</span>
+        <span class="badge">upgrade SSD/RAM</span>
+      </div>
+    </div>
+    <div class="emergency-box">
+      <h3>Risposta rapida su WhatsApp</h3>
+      <p>Descrivi il problema, manda foto o video e ricevi un primo orientamento.</p>
+      <a class="btn primary js-whatsapp" data-service="Riparazione urgente" href="#">Apri emergenza PC</a>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="custom">
+  <div class="container">
+    <div class="section-head reveal">
+      <div class="kicker">Custom loop / showcase</div>
+      <h2>Qui servono immagini reali. Il premium si dimostra.</h2>
+      <p>
+        Questa sezione è predisposta per sostituire i placeholder con foto vere di build, dettagli tubi,
+        cable management, RGB, banco test e prima/dopo riparazioni.
+      </p>
+    </div>
+    <div class="gallery">
+      <div class="shot reveal"></div>
+      <div class="stack">
+        <div class="shot small reveal"></div>
+        <div class="shot small reveal"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="method">
+  <div class="container">
+    <div class="section-head reveal">
+      <div class="kicker">Metodo Dragon</div>
+      <h2>Processo chiaro. Meno dubbi. Più chiusure.</h2>
+    </div>
+
+    <div class="process">
+      <div class="step reveal"><b>01</b><h3>Analisi</h3><p>Budget, giochi, software, monitor, urgenza.</p></div>
+      <div class="step reveal"><b>02</b><h3>Config</h3><p>Scelta componenti coerente e senza sprechi.</p></div>
+      <div class="step reveal"><b>03</b><h3>Build</h3><p>Assemblaggio, ordine interno e airflow.</p></div>
+      <div class="step reveal"><b>04</b><h3>Test</h3><p>Temperature, stabilità, driver, stress test.</p></div>
+      <div class="step reveal"><b>05</b><h3>Supporto</h3><p>Assistenza post consegna e upgrade futuri.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="preventivo">
+  <div class="container lead">
+    <div class="section-head reveal">
+      <div class="kicker">Lead machine</div>
+      <h2>Preventivo guidato. WhatsApp tracciato. Cliente qualificato.</h2>
+      <p>
+        Il form non deve “mandare una mail”. Deve aprire una conversazione WhatsApp con dati già ordinati:
+        servizio, budget, codice referral e origine del lead.
+      </p>
+      <div class="badges">
+        <span class="badge">Codice: FABRYPC</span>
+        <span class="badge">Referral tracking</span>
+        <span class="badge">Google Ads ready</span>
+      </div>
+    </div>
+
+    <div class="form-card reveal">
+      <form id="leadForm">
+        <div class="form-grid">
+          <input name="name" placeholder="Nome" required>
+          <input name="phone" placeholder="Telefono" required>
+          <select name="service" required>
+            <option value="">Servizio richiesto</option>
+            <option>PC gaming assemblato</option>
+            <option>Riparazione PC</option>
+            <option>Upgrade hardware</option>
+            <option>Custom loop</option>
+            <option>Consulenza remota</option>
+          </select>
+          <select name="budget" required>
+            <option value="">Budget indicativo</option>
+            <option>Fino a 300€</option>
+            <option>300€ - 700€</option>
+            <option>700€ - 1.200€</option>
+            <option>1.200€ - 2.000€</option>
+            <option>Oltre 2.000€</option>
+          </select>
+          <input class="full" name="referral" id="referralInput" placeholder="Codice referral / sconto, es. FABRYPC">
+          <textarea class="full" name="message" placeholder="Scrivi cosa ti serve: giochi, programmi, problema, urgenza..."></textarea>
+        </div>
+        <button class="btn primary" style="width:100%;margin-top:16px" type="submit">Invia richiesta su WhatsApp</button>
+        <p class="form-note">La richiesta apre WhatsApp con i dati già compilati. Nessun pagamento automatico dal sito.</p>
+      </form>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<div class="mobile-bar">
+  <a class="js-whatsapp" data-service="PC Gaming" href="#">PC Gaming</a>
+  <a class="js-whatsapp" data-service="Riparazione urgente" href="#">Ripara</a>
+</div>
+
+<footer class="footer">
+  <div class="container">
+    Dragon’s Computer · PC Gaming · Riparazioni · Custom Loop · Lead tracking ready
+  </div>
+</footer>
+
+<script>
+const CONFIG = {
+  whatsappNumber: "393000000000",
+  defaultReferral: "FABRYPC",
+  googleAdsSendTo: "AW-XXXXXXXXXX/XXXXXXXXXXXX"
+};
+
+function getParams(){
+  return new URLSearchParams(window.location.search);
+}
+
+function getTrackingData(){
+  const params = getParams();
+  return {
+    utm_source: params.get("utm_source") || "direct",
+    utm_medium: params.get("utm_medium") || "",
+    utm_campaign: params.get("utm_campaign") || "",
+    utm_term: params.get("utm_term") || "",
+    utm_content: params.get("utm_content") || "",
+    gclid: params.get("gclid") || "",
+    referral: params.get("ref") || localStorage.getItem("dragon_referral") || CONFIG.defaultReferral
+  };
+}
+
+function persistTracking(){
+  const data = getTrackingData();
+  if(data.referral) localStorage.setItem("dragon_referral", data.referral);
+  localStorage.setItem("dragon_tracking", JSON.stringify(data));
+  const input = document.getElementById("referralInput");
+  if(input && !input.value) input.value = data.referral;
+}
+
+function trackEvent(eventName, params = {}){
+  const payload = {...getTrackingData(), ...params};
+  if(window.gtag) gtag("event", eventName, payload);
+  console.log("Tracked:", eventName, payload);
+}
+
+function buildWhatsappUrl(service, extra = ""){
+  const t = getTrackingData();
+  const message = `
+Ciao Dragon's Computer, vorrei informazioni.
+
+Servizio: ${service}
+${extra ? extra + "\n" : ""}
+Codice referral: ${t.referral}
+
+Origine lead:
+utm_source: ${t.utm_source}
+utm_medium: ${t.utm_medium}
+utm_campaign: ${t.utm_campaign}
+utm_term: ${t.utm_term}
+utm_content: ${t.utm_content}
+gclid: ${t.gclid}
+`.trim();
+
+  return `https://wa.me/${CONFIG.whatsappNumber}?text=${encodeURIComponent(message)}`;
+}
+
+document.addEventListener("DOMContentLoaded", () => {
+  persistTracking();
+
+  document.querySelectorAll(".js-whatsapp").forEach(el => {
+    el.addEventListener("click", e => {
+      e.preventDefault();
+      const service = el.dataset.service || "Contatto generico";
+      trackEvent("whatsapp_click", {service});
+      window.location.href = buildWhatsappUrl(service);
+    });
+  });
+
+  const form = document.getElementById("leadForm");
+  if(form){
+    form.addEventListener("submit", e => {
+      e.preventDefault();
+      const data = new FormData(form);
+      const service = data.get("service") || "Preventivo";
+      const extra = `
+Nome: ${data.get("name")}
+Telefono: ${data.get("phone")}
+Budget: ${data.get("budget")}
+Codice inserito: ${data.get("referral")}
+Messaggio: ${data.get("message")}
+`.trim();
+
+      trackEvent("form_submit", {
+        service,
+        budget: data.get("budget"),
+        referral_inserted: data.get("referral")
+      });
+
+      window.location.href = buildWhatsappUrl(service, extra);
+    });
+  }
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if(entry.isIntersecting) entry.target.classList.add("visible");
+    });
+  }, {threshold:.12});
+
+  document.querySelectorAll(".reveal").forEach(el => observer.observe(el));
+});
+</script>
 
 </body>
 </html>
