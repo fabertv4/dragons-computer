@@ -2,6 +2,362 @@
 <html lang="it">
 <head>
   <style>
+    :root {
+  --bg: #05060a;
+  --card: #0c0f17;
+  --text: #ffffff;
+  --muted: #9aa4b2;
+  --accent: #ff2d2d;
+  --accent2: #7b61ff;
+  --border: rgba(255,255,255,0.08);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.5;
+}
+
+/* NAV */
+
+.site-header {
+  position: sticky;
+  top: 0;
+  backdrop-filter: blur(20px);
+  background: rgba(5,6,10,0.7);
+  border-bottom: 1px solid var(--border);
+  z-index: 10;
+}
+
+.nav-wrap {
+  max-width: 1200px;
+  margin: auto;
+  padding: 18px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.brand {
+  font-weight: 800;
+  text-decoration: none;
+  color: white;
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.brand-mark {
+  background: linear-gradient(45deg, red, purple);
+  padding: 6px 10px;
+  border-radius: 8px;
+}
+
+.desktop-nav {
+  display: flex;
+  gap: 20px;
+}
+
+.desktop-nav a {
+  color: #aaa;
+  text-decoration: none;
+}
+
+.nav-cta {
+  border: 1px solid var(--border);
+  padding: 8px 16px;
+  border-radius: 20px;
+}
+
+/* HERO */
+
+.hero {
+  position: relative;
+  padding: 140px 20px;
+  overflow: hidden;
+}
+
+.hero-grid {
+  max-width: 1200px;
+  margin: auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+}
+
+.hero h1 {
+  font-size: clamp(42px, 6vw, 70px);
+  margin: 0;
+}
+
+.hero h1 span {
+  background: linear-gradient(90deg, red, purple);
+  -webkit-background-clip: text;
+  color: transparent;
+}
+
+.hero-text {
+  color: var(--muted);
+  margin-top: 20px;
+}
+
+.hero-actions {
+  margin-top: 30px;
+  display: flex;
+  gap: 12px;
+}
+
+.hero-proof {
+  margin-top: 20px;
+  display: flex;
+  gap: 20px;
+  color: #666;
+}
+
+/* GLOW */
+
+.hero-glow {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(120px);
+  opacity: 0.3;
+}
+
+.hero-glow-one {
+  width: 400px;
+  height: 400px;
+  background: red;
+  top: -100px;
+  left: -100px;
+}
+
+.hero-glow-two {
+  width: 400px;
+  height: 400px;
+  background: purple;
+  bottom: -100px;
+  right: -100px;
+}
+
+/* VISUAL PC */
+
+.pc-tower {
+  width: 260px;
+  height: 420px;
+  margin: auto;
+  border-radius: 20px;
+  background: linear-gradient(180deg, #111, #05060a);
+  position: relative;
+  box-shadow: 0 0 60px rgba(0,0,0,0.8);
+}
+
+.tower-light {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, red, purple);
+  opacity: 0.15;
+  border-radius: 20px;
+}
+
+.fan {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background: radial-gradient(circle, #444, #111);
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.fan-one { top: 80px; }
+.fan-two { top: 200px; }
+
+.cooling-line {
+  width: 4px;
+  height: 120px;
+  background: linear-gradient(red, purple);
+  position: absolute;
+}
+
+.line-one {
+  top: 60px;
+  left: 40px;
+}
+
+.line-two {
+  bottom: 60px;
+  right: 40px;
+}
+
+/* BUTTONS */
+
+.btn {
+  padding: 14px 22px;
+  border-radius: 30px;
+  text-decoration: none;
+  font-weight: 700;
+}
+
+.btn-primary {
+  background: linear-gradient(90deg, red, purple);
+  color: white;
+}
+
+.btn-secondary {
+  border: 1px solid var(--border);
+  color: white;
+}
+
+.full {
+  width: 100%;
+}
+
+/* GRID */
+
+.container {
+  max-width: 1100px;
+  margin: auto;
+  padding: 20px;
+}
+
+.path-grid {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.path-card {
+  background: var(--card);
+  padding: 30px;
+  border-radius: 20px;
+  width: 300px;
+  border: 1px solid var(--border);
+}
+
+.card-link {
+  color: var(--accent);
+  text-decoration: none;
+}
+
+/* BUILD */
+
+.build-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+}
+
+.build-row {
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid var(--border);
+  padding: 12px 0;
+}
+
+/* METRICS */
+
+.metrics-grid {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+}
+
+.metric-value {
+  font-size: 40px;
+  font-weight: bold;
+}
+
+/* REPAIR */
+
+.repair-card {
+  background: var(--card);
+  padding: 40px;
+  border-radius: 20px;
+}
+
+/* CUSTOM */
+
+.custom-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.liquid-orb {
+  width: 250px;
+  height: 250px;
+  background: radial-gradient(circle, red, purple);
+  border-radius: 50%;
+  margin: auto;
+  filter: blur(40px);
+}
+
+/* FORM */
+
+.lead-card {
+  background: var(--card);
+  padding: 40px;
+  border-radius: 20px;
+}
+
+.lead-form {
+  display: grid;
+  gap: 12px;
+  margin-top: 20px;
+}
+
+input, select {
+  padding: 14px;
+  border-radius: 10px;
+  border: 1px solid var(--border);
+  background: #05060a;
+  color: white;
+}
+
+/* MOBILE */
+
+.mobile-bar {
+  display: none;
+}
+
+@media (max-width: 800px) {
+
+  .hero-grid,
+  .build-grid,
+  .custom-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .desktop-nav {
+    display: none;
+  }
+
+  .mobile-bar {
+    display: flex;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+  }
+
+  .mobile-bar a {
+    flex: 1;
+    padding: 16px;
+    text-align: center;
+    text-decoration: none;
+    color: white;
+    background: black;
+  }
+
+  .mobile-bar a:first-child {
+    background: red;
+  }
+}
+    </style>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Dragon’s Computer | PC Gaming, Riparazioni e Custom Loop</title>
