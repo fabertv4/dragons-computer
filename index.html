@@ -1,197 +1,215 @@
 <!doctype html>
 <html lang="it">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Dragon's Computer | PC Gaming, Riparazione PC e Custom Loop</title>
-  <meta name="description" content="Dragon's Computer: negozio fisico specializzato in PC gaming assemblati, riparazione computer, upgrade e custom loop. Richiedi un preventivo.">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <link rel="stylesheet" href="style.css">
+<title>Dragon’s Computer</title>
 
-  <!-- GA4 + Google Ads: sostituire con ID reali -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    window.gtag = gtag;
+<link rel="stylesheet" href="style.css">
 
-    gtag('js', new Date());
-    gtag('config', 'G-XXXXXXXXXX', {
-      anonymize_ip: true
-    });
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+window.gtag = gtag;
 
-    gtag('config', 'AW-XXXXXXXXXX');
-  </script>
+gtag('js', new Date());
+gtag('config', 'G-XXXXXXXXXX');
+gtag('config', 'AW-XXXXXXXXXX');
+</script>
 </head>
 
 <body>
 
-<header class="site-header">
-  <div class="container nav">
-    <div class="logo">Dragon's <span>Computer</span></div>
-    <a class="nav-cta" href="#preventivo">Preventivo</a>
-  </div>
+<header class="nav">
+  <div class="logo">DRAGON’S</div>
+  <a href="#cta" class="nav-btn">Preventivo</a>
 </header>
 
-<main>
-
 <section class="hero">
-  <div class="container hero-grid">
-    <div>
-      <p class="eyebrow">Negozio fisico specializzato</p>
-      <h1>PC Gaming, Riparazioni e Custom Loop fatti da tecnici veri.</h1>
-      <p class="hero-text">
-        Assemblaggio PC su misura, assistenza computer, upgrade hardware e raffreddamento a liquido custom per chi vuole prestazioni, ordine e affidabilità.
-      </p>
+  <h1>Il tuo prossimo PC<br>non deve solo funzionare.</h1>
+  <h2>Deve dominare.</h2>
 
-      <div class="hero-actions">
-        <a class="btn primary js-whatsapp" 
-           data-service="PC Gaming"
-           href="#">Voglio un PC Gaming</a>
+  <p>
+    PC gaming su misura, custom loop, riparazioni immediate.
+    Progettati per performance reali, temperature basse e zero compromessi.
+  </p>
 
-        <a class="btn secondary js-whatsapp"
-           data-service="Riparazione PC"
-           href="#">Ho bisogno di una riparazione</a>
-      </div>
-
-      <p class="trust">Preventivo rapido • Negozio fisico • Consulenza tecnica reale</p>
-    </div>
-
-    <div class="hero-card">
-      <h2>Richiedi preventivo</h2>
-      <p>Indica servizio, budget e codice referral se ne hai uno.</p>
-      <form id="leadForm">
-        <input type="text" name="name" placeholder="Nome" required>
-        <input type="tel" name="phone" placeholder="Telefono" required>
-
-        <select name="service" required>
-          <option value="">Servizio richiesto</option>
-          <option>PC gaming assemblato</option>
-          <option>Riparazione PC</option>
-          <option>Upgrade PC</option>
-          <option>Custom loop</option>
-          <option>Consulenza acquisto componenti</option>
-        </select>
-
-        <select name="budget" required>
-          <option value="">Budget indicativo</option>
-          <option>Fino a 300€</option>
-          <option>300€ - 700€</option>
-          <option>700€ - 1.200€</option>
-          <option>1.200€ - 2.000€</option>
-          <option>Oltre 2.000€</option>
-        </select>
-
-        <input type="text" name="referral" id="referralInput" placeholder="Codice referral / sconto">
-
-        <button type="submit" class="btn primary full">Invia richiesta</button>
-      </form>
-    </div>
+  <div class="cta">
+    <a href="#" class="btn primary js-whatsapp" data-service="PC Gaming">Configura il tuo PC</a>
+    <a href="#" class="btn secondary js-whatsapp" data-service="Riparazione">Ripara ora</a>
   </div>
 </section>
 
-<section class="services">
-  <div class="container">
-    <h2>Servizi principali</h2>
-    <div class="cards">
+<section class="grid">
+  <div class="card">
+    <h3>PC Gaming</h3>
+    <p>Configurazioni ottimizzate per FPS reali, non marketing.</p>
+    <a href="#" class="link js-whatsapp" data-service="PC Gaming">Inizia →</a>
+  </div>
 
-      <article class="card">
-        <h3>PC Gaming Assemblati</h3>
-        <p>Configurazioni su misura per gaming, streaming, lavoro creativo e prestazioni elevate.</p>
-        <a href="#" class="text-link js-whatsapp" data-service="PC Gaming">Richiedi configurazione</a>
-      </article>
+  <div class="card">
+    <h3>Riparazione</h3>
+    <p>Diagnosi veloce. Soluzione immediata.</p>
+    <a href="#" class="link js-whatsapp" data-service="Riparazione">Risolvi →</a>
+  </div>
 
-      <article class="card">
-        <h3>Riparazione PC</h3>
-        <p>Diagnosi problemi, sostituzione componenti, pulizia, reinstallazione sistema e recupero prestazioni.</p>
-        <a href="#" class="text-link js-whatsapp" data-service="Riparazione PC">Richiedi assistenza</a>
-      </article>
-
-      <article class="card">
-        <h3>Custom Loop</h3>
-        <p>Raffreddamento a liquido custom per build premium, ordinate e ad alte prestazioni.</p>
-        <a href="#" class="text-link js-whatsapp" data-service="Custom Loop">Parla con un tecnico</a>
-      </article>
-
-    </div>
+  <div class="card">
+    <h3>Custom Loop</h3>
+    <p>Build premium. Silenzio. Estetica. Performance.</p>
+    <a href="#" class="link js-whatsapp" data-service="Custom Loop">Scopri →</a>
   </div>
 </section>
 
-<section class="value">
-  <div class="container value-grid">
-    <div>
-      <h2>Perché non comprare un PC a caso online?</h2>
-      <p>
-        Un PC potente ma assemblato male può avere temperature alte, rumore, instabilità, bottleneck e componenti scelti senza logica.
-      </p>
-    </div>
+<section class="performance">
+  <h2>Prestazioni reali.</h2>
+  <p>
+    Ogni build è progettata per temperature basse,
+    airflow corretto e stabilità sotto stress.
+  </p>
 
-    <ul class="checklist">
-      <li>Componenti scelti in base al tuo utilizzo reale</li>
-      <li>Assemblaggio pulito e ordinato</li>
-      <li>Test di stabilità prima della consegna</li>
-      <li>Assistenza fisica in negozio</li>
-      <li>Upgrade futuri pianificati</li>
-    </ul>
+  <div class="stats">
+    <div><span>+40%</span> FPS</div>
+    <div><span>-30°</span> Temp</div>
+    <div><span>0</span> Bottleneck</div>
   </div>
 </section>
 
-<section class="premium">
-  <div class="container">
-    <h2>Custom Loop e build premium</h2>
-    <p>
-      Per chi vuole una macchina scenica, silenziosa e ad alte prestazioni, Dragon’s Computer realizza build con raffreddamento a liquido custom, cable management curato e componentistica selezionata.
-    </p>
-    <a href="#" class="btn primary js-whatsapp" data-service="Custom Loop">Voglio un Custom Loop</a>
-  </div>
+<section id="cta" class="final">
+  <h2>Vuoi un PC fatto bene?</h2>
+  <p>Scrivi ora e ricevi una configurazione su misura.</p>
+
+  <a href="#" class="btn primary js-whatsapp" data-service="Preventivo">
+    Parla su WhatsApp
+  </a>
 </section>
 
-<section id="preventivo" class="final-cta">
-  <div class="container">
-    <h2>Hai bisogno di un PC o di una riparazione?</h2>
-    <p>Scrivici ora. Più dettagli dai, più preciso sarà il preventivo.</p>
-
-    <div class="cta-row">
-      <a href="#" class="btn primary js-whatsapp" data-service="Preventivo generico">Scrivi su WhatsApp</a>
-      <a href="tel:+390000000000" class="btn secondary js-phone">Chiama il negozio</a>
-    </div>
-  </div>
-</section>
-
-<section class="faq">
-  <div class="container">
-    <h2>Domande frequenti</h2>
-
-    <details>
-      <summary>Assemblate PC gaming su misura?</summary>
-      <p>Sì, configuriamo PC gaming in base a budget, giochi, monitor e prestazioni desiderate.</p>
-    </details>
-
-    <details>
-      <summary>Fate riparazione computer?</summary>
-      <p>Sì, effettuiamo diagnosi, sostituzione componenti, pulizia, reinstallazione sistema e upgrade.</p>
-    </details>
-
-    <details>
-      <summary>Realizzate custom loop?</summary>
-      <p>Sì, realizziamo sistemi di raffreddamento a liquido custom per build premium.</p>
-    </details>
-  </div>
-</section>
-
-</main>
-
-<div class="mobile-sticky">
-  <a href="#" class="js-whatsapp" data-service="Contatto rapido">WhatsApp</a>
-  <a href="tel:+390000000000" class="js-phone">Chiama</a>
-</div>
-
-<footer class="footer">
-  <div class="container">
-    <p>© Dragon's Computer - PC Gaming, Riparazione PC, Custom Loop</p>
-  </div>
+<footer>
+  <p>Dragon’s Computer</p>
 </footer>
 
 <script src="script.js"></script>
 </body>
 </html>
+🎨 NUOVO style.css (COPIA E INCOLLA)
+
+Vai su style.css → cancella tutto → incolla:
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+  background: #000;
+  color: #fff;
+  text-align: center;
+}
+
+.nav {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px 40px;
+}
+
+.logo {
+  font-weight: 800;
+  letter-spacing: 2px;
+}
+
+.nav-btn {
+  color: #fff;
+  text-decoration: none;
+  border: 1px solid #333;
+  padding: 10px 20px;
+  border-radius: 30px;
+}
+
+.hero {
+  padding: 120px 20px;
+}
+
+.hero h1 {
+  font-size: 60px;
+  margin: 0;
+}
+
+.hero h2 {
+  font-size: 50px;
+  margin: 10px 0;
+  background: linear-gradient(90deg, red, purple);
+  -webkit-background-clip: text;
+  color: transparent;
+}
+
+.hero p {
+  color: #aaa;
+  max-width: 600px;
+  margin: 20px auto;
+}
+
+.cta {
+  margin-top: 30px;
+}
+
+.btn {
+  padding: 15px 25px;
+  margin: 5px;
+  border-radius: 30px;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.primary {
+  background: red;
+  color: white;
+}
+
+.secondary {
+  border: 1px solid #444;
+  color: white;
+}
+
+.grid {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  padding: 60px 20px;
+  flex-wrap: wrap;
+}
+
+.card {
+  background: #111;
+  padding: 30px;
+  border-radius: 20px;
+  width: 280px;
+}
+
+.link {
+  color: red;
+  text-decoration: none;
+}
+
+.performance {
+  padding: 100px 20px;
+}
+
+.stats {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  margin-top: 40px;
+}
+
+.stats span {
+  display: block;
+  font-size: 40px;
+  font-weight: bold;
+}
+
+.final {
+  padding: 120px 20px;
+}
+
+footer {
+  padding: 40px;
+  color: #666;
+}
