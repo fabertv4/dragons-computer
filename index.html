@@ -1,0 +1,648 @@
+<!doctype html>
+<html lang="it">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Dragon's Computer | PC Gaming, Riparazione PC e Custom Loop</title>
+  <meta name="description" content="Dragon's Computer: negozio fisico specializzato in PC gaming assemblati, riparazione computer, upgrade e custom loop. Richiedi un preventivo.">
+
+  <link rel="stylesheet" href="style.css">
+
+  <!-- GA4 + Google Ads: sostituire con ID reali -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    window.gtag = gtag;
+
+    gtag('js', new Date());
+    gtag('config', 'G-XXXXXXXXXX', {
+      anonymize_ip: true
+    });
+
+    gtag('config', 'AW-XXXXXXXXXX');
+  </script>
+</head>
+
+<body>
+
+<header class="site-header">
+  <div class="container nav">
+    <div class="logo">Dragon's <span>Computer</span></div>
+    <a class="nav-cta" href="#preventivo">Preventivo</a>
+  </div>
+</header>
+
+<main>
+
+<section class="hero">
+  <div class="container hero-grid">
+    <div>
+      <p class="eyebrow">Negozio fisico specializzato</p>
+      <h1>PC Gaming, Riparazioni e Custom Loop fatti da tecnici veri.</h1>
+      <p class="hero-text">
+        Assemblaggio PC su misura, assistenza computer, upgrade hardware e raffreddamento a liquido custom per chi vuole prestazioni, ordine e affidabilità.
+      </p>
+
+      <div class="hero-actions">
+        <a class="btn primary js-whatsapp" 
+           data-service="PC Gaming"
+           href="#">Voglio un PC Gaming</a>
+
+        <a class="btn secondary js-whatsapp"
+           data-service="Riparazione PC"
+           href="#">Ho bisogno di una riparazione</a>
+      </div>
+
+      <p class="trust">Preventivo rapido • Negozio fisico • Consulenza tecnica reale</p>
+    </div>
+
+    <div class="hero-card">
+      <h2>Richiedi preventivo</h2>
+      <p>Indica servizio, budget e codice referral se ne hai uno.</p>
+      <form id="leadForm">
+        <input type="text" name="name" placeholder="Nome" required>
+        <input type="tel" name="phone" placeholder="Telefono" required>
+
+        <select name="service" required>
+          <option value="">Servizio richiesto</option>
+          <option>PC gaming assemblato</option>
+          <option>Riparazione PC</option>
+          <option>Upgrade PC</option>
+          <option>Custom loop</option>
+          <option>Consulenza acquisto componenti</option>
+        </select>
+
+        <select name="budget" required>
+          <option value="">Budget indicativo</option>
+          <option>Fino a 300€</option>
+          <option>300€ - 700€</option>
+          <option>700€ - 1.200€</option>
+          <option>1.200€ - 2.000€</option>
+          <option>Oltre 2.000€</option>
+        </select>
+
+        <input type="text" name="referral" id="referralInput" placeholder="Codice referral / sconto">
+
+        <button type="submit" class="btn primary full">Invia richiesta</button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<section class="services">
+  <div class="container">
+    <h2>Servizi principali</h2>
+    <div class="cards">
+
+      <article class="card">
+        <h3>PC Gaming Assemblati</h3>
+        <p>Configurazioni su misura per gaming, streaming, lavoro creativo e prestazioni elevate.</p>
+        <a href="#" class="text-link js-whatsapp" data-service="PC Gaming">Richiedi configurazione</a>
+      </article>
+
+      <article class="card">
+        <h3>Riparazione PC</h3>
+        <p>Diagnosi problemi, sostituzione componenti, pulizia, reinstallazione sistema e recupero prestazioni.</p>
+        <a href="#" class="text-link js-whatsapp" data-service="Riparazione PC">Richiedi assistenza</a>
+      </article>
+
+      <article class="card">
+        <h3>Custom Loop</h3>
+        <p>Raffreddamento a liquido custom per build premium, ordinate e ad alte prestazioni.</p>
+        <a href="#" class="text-link js-whatsapp" data-service="Custom Loop">Parla con un tecnico</a>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<section class="value">
+  <div class="container value-grid">
+    <div>
+      <h2>Perché non comprare un PC a caso online?</h2>
+      <p>
+        Un PC potente ma assemblato male può avere temperature alte, rumore, instabilità, bottleneck e componenti scelti senza logica.
+      </p>
+    </div>
+
+    <ul class="checklist">
+      <li>Componenti scelti in base al tuo utilizzo reale</li>
+      <li>Assemblaggio pulito e ordinato</li>
+      <li>Test di stabilità prima della consegna</li>
+      <li>Assistenza fisica in negozio</li>
+      <li>Upgrade futuri pianificati</li>
+    </ul>
+  </div>
+</section>
+
+<section class="premium">
+  <div class="container">
+    <h2>Custom Loop e build premium</h2>
+    <p>
+      Per chi vuole una macchina scenica, silenziosa e ad alte prestazioni, Dragon’s Computer realizza build con raffreddamento a liquido custom, cable management curato e componentistica selezionata.
+    </p>
+    <a href="#" class="btn primary js-whatsapp" data-service="Custom Loop">Voglio un Custom Loop</a>
+  </div>
+</section>
+
+<section id="preventivo" class="final-cta">
+  <div class="container">
+    <h2>Hai bisogno di un PC o di una riparazione?</h2>
+    <p>Scrivici ora. Più dettagli dai, più preciso sarà il preventivo.</p>
+
+    <div class="cta-row">
+      <a href="#" class="btn primary js-whatsapp" data-service="Preventivo generico">Scrivi su WhatsApp</a>
+      <a href="tel:+390000000000" class="btn secondary js-phone">Chiama il negozio</a>
+    </div>
+  </div>
+</section>
+
+<section class="faq">
+  <div class="container">
+    <h2>Domande frequenti</h2>
+
+    <details>
+      <summary>Assemblate PC gaming su misura?</summary>
+      <p>Sì, configuriamo PC gaming in base a budget, giochi, monitor e prestazioni desiderate.</p>
+    </details>
+
+    <details>
+      <summary>Fate riparazione computer?</summary>
+      <p>Sì, effettuiamo diagnosi, sostituzione componenti, pulizia, reinstallazione sistema e upgrade.</p>
+    </details>
+
+    <details>
+      <summary>Realizzate custom loop?</summary>
+      <p>Sì, realizziamo sistemi di raffreddamento a liquido custom per build premium.</p>
+    </details>
+  </div>
+</section>
+
+</main>
+
+<div class="mobile-sticky">
+  <a href="#" class="js-whatsapp" data-service="Contatto rapido">WhatsApp</a>
+  <a href="tel:+390000000000" class="js-phone">Chiama</a>
+</div>
+
+<footer class="footer">
+  <div class="container">
+    <p>© Dragon's Computer - PC Gaming, Riparazione PC, Custom Loop</p>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
+:root {
+  --bg: #090b10;
+  --card: #121722;
+  --text: #f5f7fb;
+  --muted: #aab3c5;
+  --accent: #ff3b2f;
+  --accent2: #ffb000;
+  --border: rgba(255,255,255,0.1);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.5;
+}
+
+.container {
+  width: min(1120px, 92%);
+  margin: auto;
+}
+
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  background: rgba(9,11,16,0.92);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--border);
+}
+
+.nav {
+  height: 72px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  font-weight: 800;
+  font-size: 22px;
+}
+
+.logo span {
+  color: var(--accent);
+}
+
+.nav-cta {
+  color: var(--text);
+  text-decoration: none;
+  border: 1px solid var(--border);
+  padding: 10px 18px;
+  border-radius: 999px;
+}
+
+.hero {
+  padding: 80px 0;
+  background:
+    radial-gradient(circle at top right, rgba(255,59,47,0.2), transparent 35%),
+    radial-gradient(circle at bottom left, rgba(255,176,0,0.14), transparent 30%);
+}
+
+.hero-grid {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 48px;
+  align-items: center;
+}
+
+.eyebrow {
+  color: var(--accent2);
+  text-transform: uppercase;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+h1 {
+  font-size: clamp(42px, 6vw, 72px);
+  line-height: 0.95;
+  margin: 0 0 24px;
+}
+
+h2 {
+  font-size: clamp(30px, 4vw, 44px);
+  margin: 0 0 20px;
+}
+
+h3 {
+  font-size: 24px;
+  margin-top: 0;
+}
+
+.hero-text {
+  font-size: 20px;
+  color: var(--muted);
+  max-width: 680px;
+}
+
+.hero-actions,
+.cta-row {
+  display: flex;
+  gap: 14px;
+  flex-wrap: wrap;
+  margin-top: 28px;
+}
+
+.btn {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 50px;
+  padding: 14px 22px;
+  border-radius: 14px;
+  font-weight: 800;
+  text-decoration: none;
+  border: none;
+  cursor: pointer;
+}
+
+.primary {
+  background: var(--accent);
+  color: white;
+}
+
+.secondary {
+  background: transparent;
+  color: white;
+  border: 1px solid var(--border);
+}
+
+.full {
+  width: 100%;
+}
+
+.trust {
+  color: var(--muted);
+  margin-top: 18px;
+}
+
+.hero-card,
+.card {
+  background: linear-gradient(180deg, rgba(255,255,255,0.06), rgba(255,255,255,0.03));
+  border: 1px solid var(--border);
+  border-radius: 24px;
+  padding: 28px;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+}
+
+form {
+  display: grid;
+  gap: 14px;
+}
+
+input,
+select {
+  width: 100%;
+  padding: 15px;
+  background: #090d14;
+  color: white;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  font-size: 16px;
+}
+
+.services,
+.value,
+.premium,
+.final-cta,
+.faq {
+  padding: 72px 0;
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 22px;
+}
+
+.card p,
+.value p,
+.premium p,
+.final-cta p {
+  color: var(--muted);
+}
+
+.text-link {
+  color: var(--accent2);
+  font-weight: 800;
+  text-decoration: none;
+}
+
+.value {
+  background: #0d111a;
+}
+
+.value-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 42px;
+}
+
+.checklist {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.checklist li {
+  padding: 14px 0;
+  border-bottom: 1px solid var(--border);
+}
+
+.checklist li::before {
+  content: "✓";
+  color: var(--accent2);
+  margin-right: 10px;
+  font-weight: 900;
+}
+
+details {
+  border-bottom: 1px solid var(--border);
+  padding: 18px 0;
+}
+
+summary {
+  cursor: pointer;
+  font-weight: 800;
+}
+
+.footer {
+  padding: 40px 0 90px;
+  color: var(--muted);
+  border-top: 1px solid var(--border);
+}
+
+.mobile-sticky {
+  display: none;
+}
+
+@media (max-width: 820px) {
+  .hero-grid,
+  .value-grid,
+  .cards {
+    grid-template-columns: 1fr;
+  }
+
+  .hero {
+    padding: 48px 0;
+  }
+
+  .hero-actions .btn,
+  .cta-row .btn {
+    width: 100%;
+  }
+
+  .mobile-sticky {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    z-index: 80;
+    background: #090b10;
+    border-top: 1px solid var(--border);
+  }
+
+  .mobile-sticky a {
+    padding: 16px;
+    text-align: center;
+    color: white;
+    font-weight: 900;
+    text-decoration: none;
+  }
+
+  .mobile-sticky a:first-child {
+    background: var(--accent);
+  }
+}
+script.js
+const CONFIG = {
+  whatsappNumber: "390000000000",
+  defaultReferral: "FABRYPC",
+  googleAdsSendTo: "AW-XXXXXXXXXX/XXXXXXXXXXXX"
+};
+
+function getParams() {
+  return new URLSearchParams(window.location.search);
+}
+
+function getTrackingData() {
+  const params = getParams();
+
+  return {
+    utm_source: params.get("utm_source") || "direct",
+    utm_medium: params.get("utm_medium") || "",
+    utm_campaign: params.get("utm_campaign") || "",
+    utm_term: params.get("utm_term") || "",
+    utm_content: params.get("utm_content") || "",
+    gclid: params.get("gclid") || "",
+    referral: params.get("ref") || localStorage.getItem("dragon_referral") || CONFIG.defaultReferral
+  };
+}
+
+function persistTracking() {
+  const data = getTrackingData();
+
+  if (data.referral) {
+    localStorage.setItem("dragon_referral", data.referral);
+  }
+
+  localStorage.setItem("dragon_tracking", JSON.stringify(data));
+
+  const referralInput = document.getElementById("referralInput");
+  if (referralInput && !referralInput.value) {
+    referralInput.value = data.referral;
+  }
+}
+
+function trackEvent(eventName, params = {}) {
+  const tracking = getTrackingData();
+
+  const payload = {
+    ...tracking,
+    ...params
+  };
+
+  if (window.gtag) {
+    gtag("event", eventName, payload);
+  }
+
+  console.log("Tracked:", eventName, payload);
+}
+
+function sendGoogleAdsConversion() {
+  if (window.gtag && CONFIG.googleAdsSendTo.includes("AW-")) {
+    gtag("event", "conversion", {
+      send_to: CONFIG.googleAdsSendTo
+    });
+  }
+}
+
+function buildWhatsappUrl(service) {
+  const tracking = getTrackingData();
+
+  const message = `
+Ciao Dragon's Computer, vorrei informazioni.
+
+Servizio: ${service}
+Codice referral: ${tracking.referral}
+
+Origine:
+utm_source: ${tracking.utm_source}
+utm_medium: ${tracking.utm_medium}
+utm_campaign: ${tracking.utm_campaign}
+utm_term: ${tracking.utm_term}
+gclid: ${tracking.gclid}
+`.trim();
+
+  return `https://wa.me/${CONFIG.whatsappNumber}?text=${encodeURIComponent(message)}`;
+}
+
+function setupWhatsappButtons() {
+  document.querySelectorAll(".js-whatsapp").forEach(button => {
+    button.addEventListener("click", function(e) {
+      e.preventDefault();
+
+      const service = this.dataset.service || "Contatto generico";
+
+      trackEvent("whatsapp_click", {
+        service: service
+      });
+
+      sendGoogleAdsConversion();
+
+      window.location.href = buildWhatsappUrl(service);
+    });
+  });
+}
+
+function setupPhoneButtons() {
+  document.querySelectorAll(".js-phone").forEach(button => {
+    button.addEventListener("click", function() {
+      trackEvent("phone_click", {
+        service: "Telefonata"
+      });
+
+      sendGoogleAdsConversion();
+    });
+  });
+}
+
+function setupLeadForm() {
+  const form = document.getElementById("leadForm");
+  if (!form) return;
+
+  form.addEventListener("submit", function(e) {
+    e.preventDefault();
+
+    const formData = new FormData(form);
+    const tracking = getTrackingData();
+
+    const lead = {
+      name: formData.get("name"),
+      phone: formData.get("phone"),
+      service: formData.get("service"),
+      budget: formData.get("budget"),
+      referral: formData.get("referral") || tracking.referral,
+      ...tracking
+    };
+
+    trackEvent("form_submit", lead);
+    sendGoogleAdsConversion();
+
+    const message = `
+Nuova richiesta preventivo Dragon's Computer
+
+Nome: ${lead.name}
+Telefono: ${lead.phone}
+Servizio: ${lead.service}
+Budget: ${lead.budget}
+Codice referral: ${lead.referral}
+
+Tracking:
+utm_source: ${lead.utm_source}
+utm_medium: ${lead.utm_medium}
+utm_campaign: ${lead.utm_campaign}
+utm_term: ${lead.utm_term}
+utm_content: ${lead.utm_content}
+gclid: ${lead.gclid}
+`.trim();
+
+    window.location.href = `https://wa.me/${CONFIG.whatsappNumber}?text=${encodeURIComponent(message)}`;
+  });
+}
+
+document.addEventListener("DOMContentLoaded", () => {
+  persistTracking();
+  setupWhatsappButtons();
+  setupPhoneButtons();
+  setupLeadForm();
+
+  trackEvent("page_view_custom", {
+    page: window.location.pathname
+  });
+});
