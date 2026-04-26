@@ -1,92 +1,263 @@
 <!doctype html>
 <html lang="it">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Dragon’s Computer | PC Gaming, Riparazioni e Custom Loop</title>
+  <meta name="description" content="PC gaming assemblati su misura, riparazione computer, custom loop e assistenza tecnica premium. Richiedi un preventivo su WhatsApp.">
 
-<title>Dragon’s Computer</title>
+  <link rel="stylesheet" href="style.css">
 
-<link rel="stylesheet" href="style.css">
-
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
-<script>
-window.dataLayer = window.dataLayer || [];
-function gtag(){dataLayer.push(arguments);}
-window.gtag = gtag;
-
-gtag('js', new Date());
-gtag('config', 'G-XXXXXXXXXX');
-gtag('config', 'AW-XXXXXXXXXX');
-</script>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    window.gtag = gtag;
+    gtag('js', new Date());
+    gtag('config', 'G-XXXXXXXXXX', { anonymize_ip: true });
+    gtag('config', 'AW-XXXXXXXXXX');
+  </script>
 </head>
 
 <body>
 
-<header class="nav">
-  <div class="logo">DRAGON’S</div>
-  <a href="#cta" class="nav-btn">Preventivo</a>
+<header class="site-header">
+  <div class="nav-wrap">
+    <a class="brand" href="#">
+      <span class="brand-mark">D</span>
+      <span>Dragon’s Computer</span>
+    </a>
+
+    <nav class="desktop-nav">
+      <a href="#build">Build</a>
+      <a href="#repair">Riparazioni</a>
+      <a href="#custom">Custom Loop</a>
+      <a href="#lead" class="nav-cta">Preventivo</a>
+    </nav>
+  </div>
 </header>
 
+<main>
+
 <section class="hero">
-  <h1>Il tuo prossimo PC<br>non deve solo funzionare.</h1>
-  <h2>Deve dominare.</h2>
+  <div class="hero-glow hero-glow-one"></div>
+  <div class="hero-glow hero-glow-two"></div>
 
-  <p>
-    PC gaming su misura, custom loop, riparazioni immediate.
-    Progettati per performance reali, temperature basse e zero compromessi.
-  </p>
+  <div class="container hero-grid">
+    <div class="hero-copy">
+      <p class="eyebrow">PC gaming · riparazioni · custom loop</p>
 
-  <div class="cta">
-    <a href="#" class="btn primary js-whatsapp" data-service="PC Gaming">Configura il tuo PC</a>
-    <a href="#" class="btn secondary js-whatsapp" data-service="Riparazione">Ripara ora</a>
+      <h1>
+        Il tuo prossimo PC<br>
+        non deve solo funzionare.<br>
+        <span>Deve dominare.</span>
+      </h1>
+
+      <p class="hero-text">
+        Build su misura, assistenza rapida e configurazioni progettate per FPS reali,
+        temperature basse e affidabilità. Non vendiamo pezzi: costruiamo macchine.
+      </p>
+
+      <div class="hero-actions">
+        <a href="#" class="btn btn-primary js-whatsapp" data-service="PC Gaming">
+          Configura il tuo PC
+        </a>
+
+        <a href="#" class="btn btn-secondary js-whatsapp" data-service="Riparazione urgente">
+          Riparazione urgente
+        </a>
+      </div>
+
+      <div class="hero-proof">
+        <span>Risposta rapida</span>
+        <span>Negozio fisico</span>
+        <span>Preventivo su misura</span>
+      </div>
+    </div>
+
+    <div class="hero-visual">
+      <div class="pc-tower">
+        <div class="tower-light"></div>
+        <div class="fan fan-one"></div>
+        <div class="fan fan-two"></div>
+        <div class="gpu-line"></div>
+        <div class="cooling-line line-one"></div>
+        <div class="cooling-line line-two"></div>
+      </div>
+    </div>
   </div>
 </section>
 
-<section class="grid">
-  <div class="card">
-    <h3>PC Gaming</h3>
-    <p>Configurazioni ottimizzate per FPS reali, non marketing.</p>
-    <a href="#" class="link js-whatsapp" data-service="PC Gaming">Inizia →</a>
-  </div>
+<section class="path-section">
+  <div class="container">
+    <div class="section-heading">
+      <p class="eyebrow">Scegli il percorso</p>
+      <h2>Una richiesta. Una soluzione chiara.</h2>
+    </div>
 
-  <div class="card">
-    <h3>Riparazione</h3>
-    <p>Diagnosi veloce. Soluzione immediata.</p>
-    <a href="#" class="link js-whatsapp" data-service="Riparazione">Risolvi →</a>
-  </div>
+    <div class="path-grid">
+      <article class="path-card">
+        <span class="card-number">01</span>
+        <h3>PC Gaming su misura</h3>
+        <p>Partiamo dal tuo budget e dal tuo monitor. Poi costruiamo la configurazione più sensata.</p>
+        <a href="#" class="card-link js-whatsapp" data-service="PC Gaming">Voglio una build →</a>
+      </article>
 
-  <div class="card">
-    <h3>Custom Loop</h3>
-    <p>Build premium. Silenzio. Estetica. Performance.</p>
-    <a href="#" class="link js-whatsapp" data-service="Custom Loop">Scopri →</a>
-  </div>
-</section>
+      <article class="path-card">
+        <span class="card-number">02</span>
+        <h3>Riparazione PC</h3>
+        <p>PC lento, crash, temperature alte, problemi software o hardware. Diagnosi rapida.</p>
+        <a href="#" class="card-link js-whatsapp" data-service="Riparazione PC">Risolvi il problema →</a>
+      </article>
 
-<section class="performance">
-  <h2>Prestazioni reali.</h2>
-  <p>
-    Ogni build è progettata per temperature basse,
-    airflow corretto e stabilità sotto stress.
-  </p>
-
-  <div class="stats">
-    <div><span>+40%</span> FPS</div>
-    <div><span>-30°</span> Temp</div>
-    <div><span>0</span> Bottleneck</div>
+      <article class="path-card">
+        <span class="card-number">03</span>
+        <h3>Custom Loop</h3>
+        <p>Build premium con raffreddamento a liquido custom, estetica curata e prestazioni stabili.</p>
+        <a href="#" class="card-link js-whatsapp" data-service="Custom Loop">Voglio una build premium →</a>
+      </article>
+    </div>
   </div>
 </section>
 
-<section id="cta" class="final">
-  <h2>Vuoi un PC fatto bene?</h2>
-  <p>Scrivi ora e ricevi una configurazione su misura.</p>
+<section id="build" class="build-section">
+  <div class="container build-grid">
+    <div>
+      <p class="eyebrow">Build progettate bene</p>
+      <h2>Non serve spendere di più. Serve spendere meglio.</h2>
+      <p>
+        Il problema di molti PC assemblati è la scelta sbagliata dei componenti:
+        CPU e GPU sbilanciate, alimentatori mediocri, airflow scarso, case inadatti.
+        Qui ogni euro deve avere senso.
+      </p>
+    </div>
 
-  <a href="#" class="btn primary js-whatsapp" data-service="Preventivo">
-    Parla su WhatsApp
-  </a>
+    <div class="build-list">
+      <div class="build-row">
+        <span>Essential Gaming</span>
+        <strong>Budget intelligente</strong>
+      </div>
+      <div class="build-row">
+        <span>Performance Gaming</span>
+        <strong>FPS e stabilità</strong>
+      </div>
+      <div class="build-row">
+        <span>Extreme Build</span>
+        <strong>Potenza premium</strong>
+      </div>
+    </div>
+  </div>
 </section>
 
-<footer>
-  <p>Dragon’s Computer</p>
+<section class="metrics">
+  <div class="container metrics-grid">
+    <div>
+      <span class="metric-value">FPS</span>
+      <p>Configuriamo in base ai giochi reali, non alle schede tecniche.</p>
+    </div>
+    <div>
+      <span class="metric-value">°C</span>
+      <p>Airflow, dissipazione e test termici prima della consegna.</p>
+    </div>
+    <div>
+      <span class="metric-value">0</span>
+      <p>Meno bottleneck, meno sprechi, più equilibrio nella build.</p>
+    </div>
+  </div>
+</section>
+
+<section id="repair" class="repair-section">
+  <div class="container repair-card">
+    <div>
+      <p class="eyebrow">Assistenza rapida</p>
+      <h2>PC fermo? Non aspettare giorni.</h2>
+      <p>
+        Per problemi urgenti puoi scrivere subito su WhatsApp. Ti chiediamo sintomi,
+        modello, urgenza e proviamo a capire se serve assistenza remota o intervento in negozio.
+      </p>
+    </div>
+
+    <div class="repair-actions">
+      <a href="#" class="btn btn-primary js-whatsapp" data-service="Riparazione urgente">
+        Emergenza PC
+      </a>
+      <a href="#" class="btn btn-secondary js-whatsapp" data-service="Consulenza remota">
+        Consulenza da remoto
+      </a>
+    </div>
+  </div>
+</section>
+
+<section id="custom" class="custom-section">
+  <div class="container custom-grid">
+    <div class="custom-visual">
+      <div class="liquid-orb"></div>
+    </div>
+
+    <div>
+      <p class="eyebrow">Custom loop</p>
+      <h2>Silenzio, estetica, controllo termico.</h2>
+      <p>
+        Una build custom loop non è per tutti. È per chi vuole una macchina scenica,
+        ordinata, stabile e costruita con criterio. Qui il valore non è solo il componente:
+        è la progettazione.
+      </p>
+      <a href="#" class="btn btn-primary js-whatsapp" data-service="Custom Loop">
+        Richiedi custom loop
+      </a>
+    </div>
+  </div>
+</section>
+
+<section id="lead" class="lead-section">
+  <div class="container lead-card">
+    <p class="eyebrow">Preventivo rapido</p>
+    <h2>Dimmi cosa vuoi ottenere. Ti diciamo cosa ha senso comprare.</h2>
+    <p>
+      Scrivici budget, utilizzo, giochi/programmi principali e urgenza.
+      Se hai un codice referral, inseriscilo nel messaggio.
+    </p>
+
+    <form id="leadForm" class="lead-form">
+      <input type="text" name="name" placeholder="Nome" required>
+      <input type="tel" name="phone" placeholder="Telefono" required>
+
+      <select name="service" required>
+        <option value="">Servizio richiesto</option>
+        <option>PC gaming assemblato</option>
+        <option>Riparazione PC</option>
+        <option>Upgrade PC</option>
+        <option>Custom loop</option>
+        <option>Consulenza remota</option>
+      </select>
+
+      <select name="budget" required>
+        <option value="">Budget indicativo</option>
+        <option>Fino a 300€</option>
+        <option>300€ - 700€</option>
+        <option>700€ - 1.200€</option>
+        <option>1.200€ - 2.000€</option>
+        <option>Oltre 2.000€</option>
+      </select>
+
+      <input type="text" name="referral" id="referralInput" placeholder="Codice referral / sconto">
+
+      <button class="btn btn-primary full" type="submit">
+        Invia richiesta su WhatsApp
+      </button>
+    </form>
+  </div>
+</section>
+
+</main>
+
+<div class="mobile-bar">
+  <a href="#" class="js-whatsapp" data-service="PC Gaming">PC Gaming</a>
+  <a href="#" class="js-whatsapp" data-service="Riparazione urgente">Ripara</a>
+</div>
+
+<footer class="footer">
+  <p>Dragon’s Computer · PC Gaming · Riparazioni · Custom Loop</p>
 </footer>
 
 <script src="script.js"></script>
